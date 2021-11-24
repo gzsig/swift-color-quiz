@@ -7,7 +7,10 @@ let colorPool: [String: Color] = [
     "blue": Color.blue,
     "yellow": Color.yellow,
     "orange": Color.orange,
-    "red": Color.red
+    "red": Color.red,
+    "gray": Color.gray,
+    "black": Color.black,
+    "brown": Color.brown
 ]
 
 extension UIScreen{
@@ -15,7 +18,8 @@ extension UIScreen{
 }
 
 func validateColor(username: String, color:Color, guess:String) -> Bool {
-    if (colorPool[guess] == color){
+    print(guess.lowercased())
+    if (colorPool[guess.lowercased()] == color){
         score(username: username)
         return true
     }

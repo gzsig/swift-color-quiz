@@ -4,7 +4,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var userName: String;
-    @State var color: Color = randomColor();
+    @State var color: Color;
     @State var guess: String = "";
     @State var showingAlert = false;
     @State var answer: String = "";
@@ -58,6 +58,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(userName: "teste")
+        ContentView(userName: "teste", color: .blue)
     }
 }

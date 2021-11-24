@@ -2,6 +2,7 @@ import SwiftUI
 
 struct login: View {
     @State var userName: String = "";
+    @State var color: Color = randomColor();
     var body: some View {
         NavigationView{
             VStack{
@@ -9,7 +10,7 @@ struct login: View {
                 Text("Color Quiz!")
                     .padding()
                     .font(.largeTitle.bold())
-                    .foregroundColor(.blue)
+                    .foregroundColor(color)
                 Spacer()
                 Text("Pick a username")
                     .frame(width: UIScreen.screenSize.width * 0.8 + 20,
@@ -23,8 +24,8 @@ struct login: View {
                 Spacer()
                 
                 if(userName != ""){
-                    NavigationLink(destination: ContentView(userName: self.userName)) {
-                        Text("START")
+                    NavigationLink(destination: ContentView(userName: self.userName, color: .green)) {
+                        Text("START").foregroundColor(color)
                     }
                 }
                 
